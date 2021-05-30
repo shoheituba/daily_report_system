@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
  <c:param name="content">
-  <c:if test="${flush != null }">
+  <c:if test="${flush != null}">
    <div id="flush_success">
     <c:out value="${flush}"></c:out>
    </div>
@@ -17,8 +17,8 @@
      </tr>
      <c:forEach var="employee" items="${employees}" varStatus="status">
      <tr class="row${status.count % 2}" >
-         <td><c:out value="{employee.code}" /></td>
-         <td><c:out value="{employee.name}" /></td>
+         <td><c:out value="${employee.code}" /></td>
+         <td><c:out value="${employee.name}" /></td>
          <td>
              <c:choose>
                 <c:when test="${employee.delete_flag == 1}">

@@ -46,8 +46,8 @@ public class PropertiesListener implements ServletContextListener {
             properties.load(is);
             is.close();
 
-            Iterator<String>pit = properties.stringPropertyNames().iterator();
-            while(pit.hasNext()){
+            Iterator<String> pit = properties.stringPropertyNames().iterator();
+            while(pit.hasNext()) {
                 String pname = pit.next();
                 context.setAttribute(pname, properties.getProperty(pname));
             }

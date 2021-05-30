@@ -28,7 +28,7 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
             query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
-    ),
+    )
 })
 @Entity
 public class Employee {
@@ -63,7 +63,7 @@ public class Employee {
         return id;
     }
 
-    public void seTd(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -71,7 +71,7 @@ public class Employee {
         return code;
     }
 
-    public void seCode(String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -79,7 +79,7 @@ public class Employee {
         return name;
     }
 
-    public void seTd(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -87,7 +87,7 @@ public class Employee {
         return password;
     }
 
-    public void sePassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
@@ -95,7 +95,7 @@ public class Employee {
         return admin_flag;
     }
 
-    public void seAdmin_flag(Integer admin_flag) {
+    public void setAdmin_flag(Integer admin_flag) {
         this.admin_flag = admin_flag;
     }
 
@@ -103,7 +103,7 @@ public class Employee {
         return created_at;
     }
 
-    public void seCreated_at(Timestamp created_at) {
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
     }
 
@@ -119,7 +119,9 @@ public class Employee {
         return delete_flag;
     }
 
-    public void setDelete_flagTd(Integer delete_flag) {
+    public void setDelete_flag(Integer delete_flag) {
         this.delete_flag = delete_flag;
     }
+
+
     }
