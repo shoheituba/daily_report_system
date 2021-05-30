@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:import url="/WEB-INF/views/layput/app.jsp">
+<c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
        <c:choose>
           <c:when test="${employee != null}">
@@ -11,7 +11,7 @@
                  <tbody>
                     <tr>
                           <th>社員番号</th>
-                          <td><c:out value="{employee.code}" /></td>
+                          <td><c:out value="${employee.code}" /></td>
                     </tr>
                     <tr>
                            <th>氏名</th>
@@ -29,17 +29,17 @@
                      <tr>
                            <th>登録日時</th>
                            <td>
-                              <fmt:formatDate value="{employee.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
+                              <fmt:formatDate value="${employee.created_at}" pattern="yyyy-MM-dd HH:mm:ss" />
                            </td>
                      </tr>
                   </tbody>
               </table>
 
-              <p><a href="<c:yrl value='/employees/edit?id=${employee.id}' /> ">この従業員を編集する</a></p>
+              <p><a href="<c:url value='/employees/edit?id=${employee.id}' /> ">この従業員を編集する</a></p>
          </c:when>
-             <c:otherwise>
+         <c:otherwise>
                <h2>お探しのデータは見つかりませんでした。</h2>
-              </c:otherwise>
+         </c:otherwise>
       </c:choose>
 
 

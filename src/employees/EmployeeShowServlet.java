@@ -34,13 +34,13 @@ public class EmployeeShowServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     EntityManager em = DBUtil.createEntityManager();
 
-    Employee e = em.find(Employee.class , Integer.parseInt(request.getParameter("Id")));
+    Employee e = em.find(Employee.class, Integer.parseInt(request.getParameter("id")));
 
     em.close();
 
     request.setAttribute("employee" , e);
 
-    RequestDispatcher rd = request.getRequestDispatcher("/WEB/-INF/views/employees/show.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/employees/show.jsp");
     rd.forward(request , response);
     }
 
