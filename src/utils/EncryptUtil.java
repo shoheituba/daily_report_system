@@ -7,7 +7,7 @@ import javax.xml.bind.DatatypeConverter;
 
 public class EncryptUtil {
 
-
+    //パスワードを暗号化して返す。
     public static String getPasswordEncrypt(String plain_p, String pepper) {
         String ret = "";
 
