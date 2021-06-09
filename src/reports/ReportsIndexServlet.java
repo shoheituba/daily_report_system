@@ -39,7 +39,7 @@ public class ReportsIndexServlet extends HttpServlet {
         try{
             page = Integer.parseInt(request.getParameter("page"));
         } catch(Exception e){
-                page = 1;
+            page = 1;
         }
         List<Report> reports = em.createNamedQuery("getAllReports", Report.class)
                                 .setFirstResult(15 * (page - 1))

@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
 
     RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
     rd.forward(request, response);
-    }
+}
 
     //ログイン処理を実行
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,6 +83,9 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("_token", request.getSession().getId());
             request.setAttribute("hasError", true);
             request.setAttribute("code", code);
+
+            RequestDispatcher rd =request.getRequestDispatcher("/WEB-INF/views/login/login.jsp");
+            rd.forward(request, response);
         } else {
             //認証出来たらログイン状態にしてトップページへリダイレクト
             request.getSession().setAttribute("login_employee", e);

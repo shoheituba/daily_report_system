@@ -60,8 +60,8 @@ public class TopPageIndexServlet extends HttpServlet {
         request.setAttribute("page", page);
 
         if(request.getSession().getAttribute("flush") != null) {
-          request.setAttribute("flush", request.getSession().getAttribute("flush"));
-          request.getSession().removeAttribute("flush");
+            request.setAttribute("flush", request.getSession().getAttribute("flush"));
+            request.getSession().removeAttribute("flush");
       }
 
       RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/topPage/index.jsp");
